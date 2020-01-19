@@ -65,6 +65,7 @@ module SshknownhostsRecipeHelpers
       if key
         # The key was specified, so use it
         ssh_known_hosts_entry "#{fqdn}-#{key_type}" do
+          host fqdn
           key key
           key_type key_type unless key_type.nil?
         end
